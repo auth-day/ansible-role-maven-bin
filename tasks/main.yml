@@ -1,0 +1,7 @@
+--- 
+
+- name: get maven bins 
+  get_url: url={{ maven_url }} dest=/opt/
+
+- name: unarchive maven tar
+  unarchive: src={{ apache_maven_prefix }}/apache-maven-{{ apache_maven_version }}-bin.tar.gz dest={{ apache_maven_prefix }} mode=0777 remote_src=yes
